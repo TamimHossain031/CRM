@@ -17,9 +17,193 @@ Start Date: 10-07-2024
 
 */
 
-// Utilitis ===== 
+// Utilitis =====
 @forward "./base/index";
-@use './utiles/index' as veriable;
+@use "./utiles/index";
 
+main {
+  max-width: 1920px;
+  width: 100%;  
+  background: index.$main_bg;
+}
 
+@mixin container($width) {
+  max-width: $width;
+  width: 100%;
+  margin: 0 auto;
+}
 
+// Navbar <!----------------------!>
+nav {
+  @include container(1290px);  
+  display: flex;
+  padding: 10px 0;
+  justify-content: space-between;
+  .logo img {
+    padding: 10px 0;
+  }
+  .main__menu {
+    max-width: 544px;
+    width: 100%;
+    ul {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding-top:20px;
+      li a {
+        
+        color: #fff;
+        transition: 0.2s ease-in;
+        line-height: 20px;
+
+        i {
+          padding: 5px;
+        }
+      }
+    }
+  }
+  .cta__button {
+    padding: 10px 0;
+  }
+}
+
+// Header <!----------------------!>
+header {
+    padding-top:20px;
+  text-align: center;
+  h2 {
+    font-size:65px;
+    background-clip: text;
+    background-image:linear-gradient(#FFFFFF,#2A2355);
+    color:transparent;
+  }
+  figure img{
+    width:128px;
+    padding: 20px 0;
+  }
+  p{
+    max-width: 799px;
+    margin:0 auto;
+    color:#8F9BB7;
+    padding:0 20px;
+    font-weight:400;
+    font-size:18px;
+    line-height:26px;
+  }
+  .header__hero{
+    position: relative;
+    width:100%;
+    height:800px;
+    margin-top:20px;
+    padding:0 20px;
+    background-image:url("../assets/q-7bea4872.png");
+    background-position:center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .fade{
+      background:index.$normal_btn;
+      border:1.2px solid #282D45;
+    }
+    .button__box{
+      display: flex;
+      justify-content: center;
+      gap:40px;
+      margin-top:30px;
+      
+    }
+    figure{
+      max-width:878px;      
+      width:100%;
+      margin:0 auto;
+      padding-top:80px;
+      img{
+        width:100%;
+      }
+    }
+    span{
+      position:absolute;
+    }
+    .left__fade{
+      left:0;
+      bottom:0;
+    }
+    .left__spiral{
+      left:50px;
+      top:20%;
+    }
+    .right__fade{
+      right:0;
+      bottom:0;
+    }
+    .right__spiral{
+      top:15%;
+      right:40px;
+    }
+  }
+
+}
+// Features <!----------------------!>
+
+// Essential App <!----------------------!>
+
+// Product Date <!----------------------!>
+
+// Customer feedback <!----------------------!>
+
+// Community <!----------------------!>
+
+// Footer <!----------------------!>
+
+// Responsive for mobile Device<!----------------------!>
+@media only screen and (max-width: 768px) {
+  .menu__icon {
+    display: inline;
+    background: transparent;
+    cursor: pointer;
+  }
+  nav {
+    padding: 0 20px;
+  }
+  nav .main__menu,
+  nav .cta__button {
+    display: none;
+  }
+
+  nav .logo img {
+    width: 80px;
+  }
+  header{
+    h1,h2{
+        font-size:32px;
+    }
+    p{
+        font-size:14px;
+    }
+    .header__hero{
+      .right__spiral{       
+        top:20%;
+      }
+      .left__spiral img,
+      .right__spiral img{
+        width:50%;
+      }
+    }
+    
+  }
+
+  
+}
+
+// Responsive for Tablet Device<!----------------------!>
+@media only screen and (min-width: 768px) {
+  .menu__icon {
+    display: none;
+  }
+  nav {
+    padding: 0 20px;
+  }
+
+  nav > * {
+    transform: scale(0.8);
+  }
+}
