@@ -23,7 +23,7 @@ Start Date: 10-07-2024
 
 main {
   max-width: 1920px;
-  width: 100%;  
+  width: 100%;
   background: index.$main_bg;
 }
 
@@ -35,7 +35,7 @@ main {
 
 // Navbar <!----------------------!>
 nav {
-  @include container(1290px);  
+  @include container(1290px);
   display: flex;
   padding: 10px 0;
   justify-content: space-between;
@@ -49,9 +49,8 @@ nav {
       width: 100%;
       display: flex;
       justify-content: space-between;
-      padding-top:20px;
+      padding-top: 20px;
       li a {
-        
         color: #fff;
         transition: 0.2s ease-in;
         line-height: 20px;
@@ -69,80 +68,141 @@ nav {
 
 // Header <!----------------------!>
 header {
-    padding-top:20px;
+  padding-top: 20px;
   text-align: center;
   h2 {
-    font-size:65px;
+    font-size: 65px;
     background-clip: text;
-    background-image:linear-gradient(#FFFFFF,#2A2355);
-    color:transparent;
+    background-image: linear-gradient(#ffffff, #2a2355);
+    color: transparent;
   }
-  figure img{
-    width:128px;
+  figure img {
+    width: 128px;
     padding: 20px 0;
   }
-  p{
+  p {
     max-width: 799px;
-    margin:0 auto;
-    color:#8F9BB7;
-    padding:0 20px;
-    font-weight:400;
-    font-size:18px;
-    line-height:26px;
+    margin: 0 auto;
+    color: #8f9bb7;
+    padding: 0 20px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
   }
-  .header__hero{
+  .header__hero {
     position: relative;
-    width:100%;
-    height:800px;
-    margin-top:20px;
-    padding:0 20px;
-    background-image:url("../assets/q-7bea4872.png");
-    background-position:center;
+    width: 100%;
+    height: 800px;
+    margin-top: 20px;
+    padding: 0 20px;
+
+    background-image: url("../assets/q-7bea4872.png");
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    .fade{
-      background:index.$normal_btn;
-      border:1.2px solid #282D45;
+    .fade {
+      background: index.$normal_btn;
+      border: 1.2px solid #282d45;
     }
-    .button__box{
+    .button__box {
       display: flex;
       justify-content: center;
-      gap:40px;
-      margin-top:30px;
-      
+      gap: 40px;
+      margin-top: 30px;
     }
-    figure{
-      max-width:878px;      
-      width:100%;
-      margin:0 auto;
-      padding-top:80px;
-      img{
-        width:100%;
+    figure {
+      position: relative;
+      max-width: 878px;
+      width: 100%;
+      margin: 0 auto;
+      padding-top: 80px;
+      z-index: 10;
+      img {
+        width: 100%;
       }
     }
-    span{
-      position:absolute;
+    span {
+      position: absolute;
+      z-index: 1;
     }
-    .left__fade{
-      left:0;
-      bottom:0;
+    .left__fade {
+      left: 0;
+      bottom: 0;
     }
-    .left__spiral{
-      left:50px;
-      top:20%;
+    .left__spiral {
+      left: 50px;
+      top: 18%;
     }
-    .right__fade{
-      right:0;
-      bottom:0;
+    .right__fade {
+      right: 0;
+      bottom: 0;
     }
-    .right__spiral{
-      top:15%;
-      right:40px;
+    .right__spiral {
+      top: 15%;
+      right: 40px;
     }
   }
-
 }
 // Features <!----------------------!>
+.features {
+  text-align: center;
+  padding: 10% 0;
+  color: #fff;
+
+  h1 {
+    font-size: 22px;
+    padding: 20px 0;
+  }
+  .features__type {
+    @include container(1250px);
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    position: relative;
+    div {
+      position: relative;
+      border: 1px solid #1b1f2f;
+      background-color: #0f0e1e;
+      border-radius: 15px;
+      align-content: top;
+      text-align: left;
+      padding: 50px 20px;
+      z-index: 1;
+      h2 {
+        font-size: 22px;
+        padding: 15px 0;
+      }
+      p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 23.5px;
+        color: #8f9bb7;
+      }
+      &::before {
+        position: absolute;
+
+        top: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        background: linear-gradient(120deg, #331c9c, #9066fb);
+        transition: 0.5s ease;
+      }
+      &:hover::before {
+        transform: rotate(3deg);
+      }
+    }
+
+    .item7 {
+      display: flex;
+      justify-content: space-between;
+      grid-column-start: 3;
+      grid-column-end: 5;
+    }
+  }
+}
 
 // Essential App <!----------------------!>
 
@@ -172,26 +232,42 @@ header {
   nav .logo img {
     width: 80px;
   }
-  header{
-    h1,h2{
-        font-size:32px;
+  header {
+    h1,
+    h2 {
+      font-size: 32px;
     }
-    p{
-        font-size:14px;
+    p {
+      font-size: 14px;
+      line-height: inherit;
     }
-    .header__hero{
-      .right__spiral{       
-        top:20%;
+    .header__hero {
+      background-size: contain;
+      background-position-y: 20%;
+      .left__spiral,
+      .right__spiral {
+        top: 20%;
       }
       .left__spiral img,
-      .right__spiral img{
-        width:50%;
+      .right__spiral img {
+        width: 50%;
       }
     }
-    
   }
-
-  
+  .features {
+    .features__type {
+      grid-template-columns: repeat(2, 1fr);
+      div {
+        h2 {
+          font-size: 16px;
+        }
+      }
+      .item7 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+      }
+    }
+  }
 }
 
 // Responsive for Tablet Device<!----------------------!>
@@ -205,5 +281,14 @@ header {
 
   nav > * {
     transform: scale(0.8);
+  }
+  .features {
+    .features__type {
+      div {
+        h2 {
+          font-size: 16px;
+        }
+      }
+    }
   }
 }
