@@ -22,3 +22,9 @@ h1 {
   font-size: 65px;
   font-weight: 500;
 }
+.fade_btn{
+  font-size: 65px;
+  background-clip: text;
+  background-image: linear-gradient(#ffffff, #2a2355);
+  color: transparent;
+}

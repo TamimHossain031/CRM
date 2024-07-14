@@ -70,12 +70,7 @@ nav {
 header {
   padding-top: 20px;
   text-align: center;
-  h2 {
-    font-size: 65px;
-    background-clip: text;
-    background-image: linear-gradient(#ffffff, #2a2355);
-    color: transparent;
-  }
+ 
   figure img {
     width: 128px;
     padding: 20px 0;
@@ -90,7 +85,7 @@ header {
     line-height: 26px;
   }
   .header__hero {
-    overflow: hidden;
+    
     position: relative;
     width: 100%;
     min-height: 400px;
@@ -127,16 +122,26 @@ header {
       z-index: 1;
     }
     .left__fade {
+      max-width:400px;
+      height:400px;
       left: 0;
       bottom: 0;
+      img{
+        width:100%;
+      }
     }
     .left__spiral {
       left: 50px;
       top: 18%;
     }
     .right__fade {
+      max-width:400px;
+      height:400px;
       right: 0;
-      bottom: 0;
+      bottom:20%;
+      img{
+        width:100%;
+      }
     }
     .right__spiral {
       top: 15%;
@@ -146,6 +151,7 @@ header {
 }
 // Features <!----------------------!>
 .features {
+  position: relative;
   text-align: center;
   padding: 20px 0;
   color: #fff;
@@ -153,6 +159,16 @@ header {
   h1 {
     font-size: 22px;
     padding: 20px 0;
+  }
+  .features__left{
+    position:absolute;
+    top:70%;
+    left:0;
+  }
+  .features__right{
+    position:absolute;
+    top:50%;
+    right:0;
   }
   .features__type {
     @include container(1250px);
@@ -222,7 +238,11 @@ header {
 }
 
 // Essential App <!----------------------!>
-
+.app{
+  @include container(1224px);
+  padding:0 20px;
+  text-align:center;
+}
 // Product Date <!----------------------!>
 
 // Customer feedback <!----------------------!>
@@ -233,6 +253,10 @@ header {
 
 // Responsive for mobile Device<!----------------------!>
 @media only screen and (max-width: 768px) {
+  h1,
+    h2 {
+      font-size: 32px !important ;
+    }
   .menu__icon {
     display: inline;
     background: transparent;
@@ -250,10 +274,7 @@ header {
     width: 80px;
   }
   header {
-    h1,
-    h2 {
-      font-size: 32px;
-    }
+   
     p {
       font-size: 14px;
       line-height: inherit;
