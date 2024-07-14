@@ -90,9 +90,10 @@ header {
     line-height: 26px;
   }
   .header__hero {
+    overflow: hidden;
     position: relative;
     width: 100%;
-    height: 800px;
+    min-height: 400px;
     margin-top: 20px;
     padding: 0 20px;
 
@@ -107,7 +108,7 @@ header {
     .button__box {
       display: flex;
       justify-content: center;
-      gap: 40px;
+      gap:1rem;
       margin-top: 30px;
     }
     figure {
@@ -158,7 +159,7 @@ header {
     padding: 20px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 1rem;
     position: relative;
     .item {
       position: relative;
@@ -262,7 +263,7 @@ header {
       background-position-y: 20%;
       .left__spiral,
       .right__spiral {
-        top: 20%;
+        top: 50%;
       }
       .left__spiral img,
       .right__spiral img {
@@ -273,11 +274,11 @@ header {
   .features {
     .features__type {
       grid-template-columns: repeat(2, 1fr);
-      div {
-        h2 {
-          font-size: 16px;
+       .item .hover__bg{
+        h2{
+          font-size:14px;
         }
-      }
+       }
       .item7 {
         grid-column-start: 1;
         grid-column-end: 3;
