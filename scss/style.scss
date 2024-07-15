@@ -94,11 +94,7 @@ header {
     background-image: url("../assets/q-7bea4872.png");
     background-position: center;
     background-size: cover;
-    background-repeat: no-repeat;
-    .fade {
-      background: index.$normal_btn;
-      border: 1.2px solid #282d45;
-    }
+    background-repeat: no-repeat;   
     .button__box {
       display: flex;
       justify-content: center;
@@ -238,52 +234,135 @@ header {
 }
 
 // Essential App <!----------------------!>
-.app {
-  @include container(1224px);
-  padding: 0 20px;
-  text-align: center;
-
-  .app_header {
-    margin-top: 40px;
-    padding: 20px;
-    color: #fff;
-    display: flex;
-    background-color: index.$card_bg;
-    border: 1px solid index.$border;
-    border-radius: 15px;
-    gap: 1rem;
-    justify-content: space-between;
-    .left {
-      width: 50%;
-      text-align: left;
-      align-content: center;
-      display:grid;
-      gap:1rem;
-     
-     
-    }
-    .right {
-      width: 50%;
-      img {
-        width: 100%;
+.app-section{
+  width:100%;
+  position: relative;
+  overflow: hidden;
+  padding:20px 0;
+  .bg-icon{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    
+  }
+  .left-icon{
+    position:absolute;
+    top:50%;
+    left:30px;
+    
+  }
+  .right-icon{
+    position:absolute;
+    bottom:10%;
+    right:30px; 
+    
+  }
+  .app {
+    @include container(1224px);
+    padding: 0 20px;
+    text-align: center;
+    position:relative;
+    
+   
+    .app_header {
+      margin-top: 40px;
+      padding: 20px;
+      color: #fff;
+      display: flex;
+      background-color: index.$card_bg;
+      border: 1px solid index.$border;
+      border-radius: 15px;
+      gap: 1rem;
+      justify-content: space-between;
+      position: relative;
+      z-index:10;
+      .left {
+        width: 50%;
+        text-align: left;
+        align-content: center;
+        display:grid;
+        gap:1rem;
+       
+       
+      }
+      .right {
+        width: 50%;
+        img {
+          width: 100%;
+        }
       }
     }
-  }
-  .app_information{
-    display:flex;
-    gap:2rem;
-    .left{
-      background-color: index.$card_bg;
-      border: 1px solid index.$border;
+    .app_information{
+      display:flex;
+      padding:20px 0;
+      gap:1rem;
+      position: relative;
+     justify-content: space-between;
+     z-index:10;
+      .left{      
+        width:30%;
+        padding:20px;
+        background-color: index.$card_bg;
+        border: 1px solid index.$border;
+        border-radius:15px;
+        display:flex;
+        flex-direction:column;
+        gap:1rem;
+        justify-content:space-between;
+        img{
+          width:100%;
+          margin:0 auto;
+        }
+      }
+      .right{
+        
+        width:65%;
+        border-radius:15px;
+        padding:55px 50px 0;
+        background-color: index.$card_bg;
+        border: 1px solid index.$border;
+        display:flex;
+        gap:1rem;
+        flex-direction:column;
+        justify-content:space-between;
+        img{
+          width:100%;
+          margin-bottom:-1px;
+        }
+      }
+      
     }
-    .right{
-      background-color: index.$card_bg;
-      border: 1px solid index.$border;
+    .app_buttons{
+      padding:20px;
+      border-radius:96px;
+      border:1px solid index.$border;
+      width:100%;
+      display:flex;
+      justify-content: center;
+      gap:1rem;
+      background:linear-gradient(#0F0E1E 55%,#0F0E1E00)
     }
   }
 }
-// Product Date <!----------------------!>
 
+// Product Date <!----------------------!>
+.default-info{
+  width:100%;
+  padding:20px;
+  .container{
+    @include container(1180px);
+    background-color:#0F0E1E;
+    padding:50px;
+    display:grid;
+    gap:1.2rem;
+    border-radius:15px;
+  border:1px solid index.$border;
+    grid-template-columns: repeat(2,1fr);
+     
+  }
+  
+}
 // Customer feedback <!----------------------!>
 
 // Community <!----------------------!>
@@ -350,37 +429,41 @@ header {
       }
     }
   }
-  .app {
-    .app_header {
-      width:100%;
-      flex-direction: column-reverse;
-      justify-content: center;
-      padding:40px;
-      gap:1.8rem;
-      .left,
-      .right {
-        width: 100%;
-        text-align: center;
-      }
-      .left{
-       
-        button{
-          margin:0 auto;
+  .app-section{
+    .app {
+      .app_header {
+        width:100%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        padding:40px;
+        gap:1.8rem;
+        .left,
+        .right {
+          width: 100%;
+          text-align: center;
+        }
+        .left{
+         
+          button{
+            margin:0 auto;
+          }
         }
       }
-    }
-    .app_information{
-      width:100%;
-      .left{
-        max-width:496px;
-        background-color:index.$card_bg;
-        border:1px solid index.$border
+      .app_information{
+        flex-direction:column;
+        .left,.right{
+          width:100%;
+        }
+        .left{
+          img{
+            width:60%;
+          }
+        }
       }
-      .right{
-        max-width:690px;
-      }
+     
     }
   }
+  
 }
 
 // Responsive for Tablet Device<!----------------------!>
