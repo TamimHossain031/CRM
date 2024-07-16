@@ -27,11 +27,11 @@ $(document).ready(function(){
         dots:false,
         responsive:{
            
-            600:{
+            800:{
                 items:2,
                 nav:false
             },
-            400:{
+            600:{
                 items:1
             }
             
