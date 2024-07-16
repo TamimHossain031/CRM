@@ -33,6 +33,9 @@ $(document).ready(function(){
             },
             600:{
                 items:1
+            },
+            300:{
+                items:1
             }
             
         }
