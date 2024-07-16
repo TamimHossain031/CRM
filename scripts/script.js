@@ -24,10 +24,18 @@ $(document).ready(function(){
         autoplayTimeout:2000,
         autoplayHoverPause:true,
         margin:20,
+        dots:false,
         responsive:{
+           
             600:{
-                items:3
+                items:2,
+                nav:false
+            },
+            400:{
+                items:1
             }
+            
         }
+        
     });
   });

@@ -346,7 +346,7 @@ header {
   padding: 20px;
   .container {
     @include container(1180px);
-    background-color: #0f0e1e;
+    background:linear-gradient(#0f0e1e 75%, transparent);
     padding: 50px;
     display: grid;
     gap: 1.2rem;
@@ -415,16 +415,16 @@ header {
 // Customer feedback <!----------------------!>
 .feedback {
   width: 100%;
-  height: 400px;
+  min-height: 400px;
   padding: 100px 0;
   position: relative;
   text-align: center;
-
+  overflow: hidden;
   .bg-icon {
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -50%;
+    top: -10%;
     right: 0;
     z-index: 1;
     img {
@@ -435,7 +435,7 @@ header {
     width: 100%;
     height: 100%;
     position: absolute;
-    bottom: -50px;
+    bottom: 0px;
     right: 0;
     z-index: 1;
     img {
@@ -457,19 +457,80 @@ header {
     position: relative;
     margin-top: 10%;
     z-index: 3;
-    width: 100%;
+    width: 120%;
+    margin-left:-10%;
     height:373px;
     background-color:index.$main_bg;
     color:#fff;
-    .item{
-      width:600px;
-      height:373px;
-      background-color:red;
-      margin:0 30px;
+    .owl-stage-outer{
+      width:100%;
+      .owl-stage{
+        width:10%;
+        .owl-item{
+          position: relative;
+          width:550px;
+          height:373px;
+          background:#0F0E1E;
+          border-radius:15px;
+          padding:50px 40px; 
+          display:flex;
+          gap:1rem;
+          flex-direction:column;
+          justify-content: space-between;
+          align-items:center;
+          .star{
+            display:flex;
+            gap:.3rem;
+            img{
+              width:20px;
+            }
+          }
+          p{
+            color:#fff;
+          }
+          .profile{
+            display:flex;
+            gap:1rem;
+            img{
+              width:45px;
+              height:45px;
+              object-position:top;
+              object-fit:cover;
+              border-radius:50%;
+            }
+            div{
+              text-align:left;
+              align-content:center;
+              p{
+                font-size:12px;
+                color:#8F9BB7;
+                line-height:14px;
+              }
+            }
+          }
+
+          &::before{
+            content:'';
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            background:url("../assets/right_x5F_quote.png");     
+            background-position:center;
+            z-index:-1;
+            background-size:contain;   
+            background-repeat: no-repeat;
+            width:80%;
+            height:80%;
+            
+          }
+        }
+       
+      }
     }
   }
 }
-// Community <!----------------------!>
+
 
 // Footer <!----------------------!>
 
@@ -578,6 +639,12 @@ header {
           line-height: 40px;
         }
       }
+    }
+  }
+  .feedback{
+    .owl-carousel{
+      width:100%;
+      margin-left:0;
     }
   }
 }
